@@ -1,308 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Dimension Property Management</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Dimension Property Management.jpg">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0092D5;
+            --white: #ffffff;
+            --black: #000000;
+            --gray-bg: #f9f9f9;
+            --text-color: #222222;
+        }
 
-    <title>About Us - Dimension Property Management</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
 
-    <link rel="icon" type="image/jpg" href="Dimension Property Management.jpg">
+        body {
+            background-color: var(--white);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        /* Top Bar Contact Info */
+        .top-bar {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+        .top-bar-info span {
+            margin-right: 20px;
+        }
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+        .top-bar-info i {
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
 
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .logo-text span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Dimension Property Management.jpg') no-repeat center center/cover;
+            height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        /* Main Layout Styles */
+        section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-block {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 50px 5% 20px 5%;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col p, .footer-col ul {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #aaaaaa;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: #222222;
+            color: var(--white);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #222222;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .top-bar { flex-direction: column; text-align: center; gap: 5px; }
+            nav ul { gap: 15px; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top">
-    <div class="container">
-
-        <a class="navbar-brand fw-bold" href="index.html">
-            Dimension Property Management
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navMenu">
-
-            <ul class="navbar-nav ms-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="about.html">About Us</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-
-            </ul>
-
+    <!-- Top Contact Strip -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fa-solid fa-phone"></i> (206) 934-1413</span>
+            <span><i class="fa-solid fa-location-dot"></i> Renton, WA 98055</span>
         </div>
-
-    </div>
-</nav>
-
-<!-- Hero -->
-<section class="about-hero">
-
-    <div class="about-overlay"></div>
-
-    <div class="container position-relative">
-
-        <div class="row align-items-center min-vh-50">
-
-            <div class="col-lg-8 text-white">
-
-                <h1 class="display-4 fw-bold">
-                    About Dimension Property Management
-                </h1>
-
-                <p class="lead mt-3">
-                    Trusted property management solutions across Washington State and the Pacific Northwest for more than 20 years.
-                </p>
-
-            </div>
-
-        </div>
-
+        <div>Real Estate Industry | United States</div>
     </div>
 
-</section>
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-text">Dimension <span>Property Management</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- About Content -->
-<section class="py-5">
+    <!-- Hero Showcase Section -->
+    <section class="hero">
+        <h1>About Us</h1>
+    </section>
 
-    <div class="container">
-
-        <div class="row align-items-center mb-5">
-
-            <div class="col-lg-6 mb-4">
-                <img src="Dimension Property Management.jpg" class="img-fluid rounded shadow-lg">
-            </div>
-
-            <div class="col-lg-6">
-
-                <h2 class="section-title">
-                    Who We Are
-                </h2>
-
-                <p>
-                    Dimension Property Management is a professional real estate management firm headquartered in Renton, Washington, proudly serving property owners and tenants throughout the Pacific Northwest for more than 20 years.
-                </p>
-
-                <p>
-                    What began as a commitment to simplifying property ownership in the local Renton market has grown into a full-service operation trusted by residential and commercial clients across Washington State.
-                </p>
-
-                <p>
-                    Dimension PM was built on one simple belief — property owners deserve a management partner who treats every asset with the same care and professionalism as the owner would.
-                </p>
-
-            </div>
-
+    <!-- Main Content Section -->
+    <section>
+        
+        <!-- About Dimension Property Management Block -->
+        <div class="content-block">
+            <h2>About Dimension Property Management</h2>
+            <p>Dimension Property Management is a professional real estate management firm headquartered in Renton, Washington, proudly serving property owners and tenants throughout the Pacific Northwest for more than 20 years. What began as a commitment to simplifying property ownership in the local Renton market has grown into a full-service operation trusted by residential and commercial clients across Washington State.</p>
+            <p>From the very beginning, Dimension PM was built on one straightforward belief: property owners deserve a management partner who treats every asset with the same care and seriousness as the owner would. That belief has guided every decision the firm has made over two decades, and it continues to shape the way Dimension Properties approaches real estate management today.</p>
         </div>
 
-        <!-- Who We Are -->
-        <div class="row mb-5">
-
-            <div class="col-lg-12">
-
-                <h2 class="section-title">
-                    Our Team & Expertise
-                </h2>
-
-                <p>
-                    Dimension PM Renton is a dedicated team of real estate professionals with deep roots in the Washington rental market. Our staff brings combined expertise in leasing, tenant relations, property maintenance, financial reporting, and Washington State housing law.
-                </p>
-
-                <p>
-                    We manage a growing portfolio of single-family homes, apartment communities, retail spaces, and office buildings throughout the Pacific Northwest.
-                </p>
-
-                <p>
-                    At Dimension Properties, we understand that every property and every owner has unique goals. Our team creates customized management solutions that deliver long-term success for both owners and tenants.
-                </p>
-
-            </div>
-
+        <!-- Who We Are Block -->
+        <div class="content-block">
+            <h2>Who We Are</h2>
+            <p>Dimension PM Renton is a dedicated team of real estate professionals with deep roots in the Washington rental market. Our staff brings combined expertise in leasing, tenant relations, property maintenance, financial reporting, and Washington State housing law. We manage a diverse and growing portfolio of single-family homes, multi-unit residential communities, retail locations, and commercial office buildings across the Pacific Northwest.</p>
+            <p>At Dimension Properties, we understand that no two properties are alike. Every owner has different goals, every property has different needs, and every tenant has different expectations. Our team takes the time to understand each situation and develop a management approach that delivers the right results for everyone involved.</p>
         </div>
 
-        <!-- What We Do -->
-        <div class="row mb-5">
-
-            <div class="col-lg-12">
-
-                <h2 class="section-title">
-                    What We Do
-                </h2>
-
-                <p>
-                    Dimension Property Management provides complete leasing and property services covering every stage of the rental process.
-                </p>
-
-                <div class="row g-4 mt-3">
-
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <i class="fa-solid fa-user-check"></i>
-                            <h4>Tenant Screening</h4>
-                            <p>
-                                Thorough applicant screening for qualified and reliable tenants.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <i class="fa-solid fa-file-contract"></i>
-                            <h4>Lease Management</h4>
-                            <p>
-                                Fully compliant lease agreements under Washington State laws.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                            <h4>Maintenance Services</h4>
-                            <p>
-                                Fast repairs and maintenance through trusted local contractors.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
+        <!-- What We Do Block -->
+        <div class="content-block">
+            <h2>What We Do</h2>
+            <p>Dimension Property Management provides end-to-end leasing and property services that cover every stage of the rental process. Dimension PM handles strategic tenant placement through thorough applicant screening, ensuring that qualified and reliable tenants occupy every property in our portfolio. We manage lease agreements in full compliance with Washington State landlord-tenant law, coordinate all maintenance and repairs through a vetted network of local contractors, and provide both owners and tenants with access to modern online portals for payments, reporting, and communication.</p>
+            <p>Dimension PM Renton also takes responsibility for rent collection, move-in and move-out inspections, lease renewals, and monthly financial reporting. Property owners receive complete visibility into their investment performance without having to manage any of the daily operational demands themselves.</p>
         </div>
 
-        <!-- Why Trust -->
-        <div class="row">
-
-            <div class="col-lg-12">
-
-                <div class="trust-box">
-
-                    <h2 class="section-title text-white">
-                        Why Property Owners Trust Dimension Properties
-                    </h2>
-
-                    <p class="text-white">
-                        Over 20 years of consistent service in the Pacific Northwest has given Dimension Property Management a strong reputation built on reliability, transparency, and results.
-                    </p>
-
-                    <p class="text-white">
-                        Property owners trust Dimension PM because we protect investments, reduce vacancies, and professionally handle every aspect of rental property management.
-                    </p>
-
-                    <p class="text-white">
-                        Tenants trust Dimension PM Renton because we maintain quality properties and provide responsive support with professionalism and care.
-                    </p>
-
-                </div>
-
-            </div>
-
+        <!-- Why Property Owners Trust Dimension Properties Block -->
+        <div class="content-block">
+            <h2>Why Property Owners Trust Dimension Properties</h2>
+            <p>Over 20 years of consistent service in the Pacific Northwest has given Dimension Property Management a reputation that is built on results. Owners trust Dimension PM because we protect their investments, reduce vacancy periods, and handle every challenge that comes with managing rental real estate in Washington. Tenants trust Dimension PM Renton because we maintain quality properties and respond to their needs with professionalism and speed.</p>
+            <p>Dimension Properties is not just a management company. We are a long-term partner committed to the success of every property owner and the comfort of every tenant we serve across Washington State and the broader Pacific Northwest region.</p>
         </div>
 
-    </div>
+    </section>
 
-</section>
-
-<!-- Footer -->
-<footer class="footer py-5">
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-lg-4">
-
+    <!-- Master Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
                 <h4>Dimension Property Management</h4>
-
-                <p>
-                    1900 S Puget Drive Suite 203<br>
-                    Renton, WA 98055
-                </p>
-
-                <p>
-                    Phone: (206) 934-1413
-                </p>
-
+                <p>Street Address: 1900 S Puget Drive Suite 203 Renton, WA 98055</p>
+                <p>Phone No.: (206) 934-1413</p>
+                <div class="social-grid">
+                    <a href="https://www.linkedin.com/company/dimension-properties-real-estate" class="social-icon" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/dimension_properties/" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://vimeo.com/user37124574" class="social-icon" target="_blank"><i class="fa-brands fa-vimeo-v"></i></a>
+                    <a href="https://www.youtube.com/@dimensionpm" class="social-icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.pinterest.com/dimensionpm/" class="social-icon" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="https://www.spreaker.com/user/dimension-property-management--18923785" class="social-icon" target="_blank"><i class="fa-solid fa-radio"></i></a>
+                    <a href="https://www.dailymotion.com/dimensionpm" class="social-icon" target="_blank"><i class="fa-solid fa-play"></i></a>
+                    <a href="https://soundcloud.com/dimensionpm" class="social-icon" target="_blank"><i class="fa-brands fa-soundcloud"></i></a>
+                    <a href="https://linktr.ee/dimensionpm" class="social-icon" target="_blank"><i class="fa-solid fa-tree"></i></a>
+                    <a href="https://www.crunchbase.com/organization/dimension-property-management" class="social-icon" target="_blank"><i class="fa-solid fa-briefcase"></i></a>
+                    <a href="https://muckrack.com/dimension-property-management" class="social-icon" target="_blank"><i class="fa-solid fa-newspaper"></i></a>
+                    <a href="https://about.me/dimensionproperties" class="social-icon" target="_blank"><i class="fa-solid fa-user"></i></a>
+                </div>
             </div>
-
-            <div class="col-lg-4">
-
+            
+            <div class="footer-col">
                 <h4>Quick Links</h4>
-
-                <ul class="footer-links">
-
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
-
             </div>
 
-            <div class="col-lg-4">
-
-                <h4>Social Media</h4>
-
-                <div class="social-icons">
-
-                    <a href="https://www.linkedin.com/company/dimension-properties-real-estate" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/dimension_properties/" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-
-                    <a href="https://www.youtube.com/@dimensionpm" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-
-                    <a href="https://vimeo.com/user37124574" target="_blank">
-                        <i class="fab fa-vimeo"></i>
-                    </a>
-
-                </div>
-
+            <div class="footer-col">
+                <h4>Location Details</h4>
+                <p>State/Country: Washington, United States</p>
+                <p>Zip code: 98055</p>
+                <p>Target Country: United States</p>
             </div>
-
         </div>
-
-        <hr class="bg-light">
-
-        <div class="text-center">
-            <p class="mb-0">
-                © 2025 Dimension Property Management. All Rights Reserved.
-            </p>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dimension Property Management. All Rights Reserved.</p>
         </div>
-
-    </div>
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>
 
 </body>
 </html>
