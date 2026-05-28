@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Dimension Property Management</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Dimension Property Management.jpg">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0092D5;
+            --white: #ffffff;
+            --black: #000000;
+            --gray-bg: #f9f9f9;
+            --text-color: #222222;
+            --border-color: #dddddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Top Bar Contact Info */
+        .top-bar {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .top-bar-info span {
+            margin-right: 20px;
+        }
+
+        .top-bar-info i {
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .logo-text span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Dimension Property Management.jpg') no-repeat center center/cover;
+            height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        /* Main Contact Layout */
+        section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        /* Form Styling */
+        .contact-form-block {
+            background-color: var(--gray-bg);
+            padding: 40px;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--white);
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--black);
+        }
+
+        /* Info Block Styling */
+        .info-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 5px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .info-item h4 {
+            font-size: 1.1rem;
+            color: var(--black);
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 1.05rem;
+            color: #555555;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 50px 5% 20px 5%;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col p, .footer-col ul {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #aaaaaa;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: #222222;
+            color: var(--white);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #222222;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container, .footer-grid { grid-template-columns: 1fr; }
+            .top-bar { flex-direction: column; text-align: center; gap: 5px; }
+            nav ul { gap: 15px; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Contact Strip -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fa-solid fa-phone"></i> (206) 934-1413</span>
+            <span><i class="fa-solid fa-location-dot"></i> Renton, WA 98055</span>
+        </div>
+        <div>Real Estate Industry | United States</div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-text">Dimension <span>Property Management</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Showcase Section -->
+    <section class="hero">
+        <h1>Contact Us</h1>
+    </section>
+
+    <!-- Main Content Section -->
+    <section>
+        <div class="contact-container">
+            
+            <!-- Contact Form Block -->
+            <div class="contact-form-block">
+                <h2>Get In Touch</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Details Block -->
+            <div>
+                <h2>Contact Information</h2>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Street Address</h4>
+                        <p>1900 S Puget Drive Suite 203 Renton, WA 98055</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <div>
+                        <h4>State/Country & Zip code</h4>
+                        <p>Washington, United States - 98055</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>Phone No.</h4>
+                        <p>(206) 934-1413</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-building"></i>
+                    <div>
+                        <h4>Industry & Target Country</h4>
+                        <p>Real Estate | United States</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Master Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Dimension Property Management</h4>
+                <p>Street Address: 1900 S Puget Drive Suite 203 Renton, WA 98055</p>
+                <p>Phone No.: (206) 934-1413</p>
+                <div class="social-grid">
+                    <a href="https://www.linkedin.com/company/dimension-properties-real-estate" class="social-icon" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/dimension_properties/" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://vimeo.com/user37124574" class="social-icon" target="_blank"><i class="fa-brands fa-vimeo-v"></i></a>
+                    <a href="https://www.youtube.com/@dimensionpm" class="social-icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.pinterest.com/dimensionpm/" class="social-icon" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="https://www.spreaker.com/user/dimension-property-management--18923785" class="social-icon" target="_blank"><i class="fa-solid fa-radio"></i></a>
+                    <a href="https://www.dailymotion.com/dimensionpm" class="social-icon" target="_blank"><i class="fa-solid fa-play"></i></a>
+                    <a href="https://soundcloud.com/dimensionpm" class="social-icon" target="_blank"><i class="fa-brands fa-soundcloud"></i></a>
+                    <a href="https://linktr.ee/dimensionpm" class="social-icon" target="_blank"><i class="fa-solid fa-tree"></i></a>
+                    <a href="https://www.crunchbase.com/organization/dimension-property-management" class="social-icon" target="_blank"><i class="fa-solid fa-briefcase"></i></a>
+                    <a href="https://muckrack.com/dimension-property-management" class="social-icon" target="_blank"><i class="fa-solid fa-newspaper"></i></a>
+                    <a href="https://about.me/dimensionproperties" class="social-icon" target="_blank"><i class="fa-solid fa-user"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location Details</h4>
+                <p>State/Country: Washington, United States</p>
+                <p>Zip code: 98055</p>
+                <p>Target Country: United States</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dimension Property Management. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
